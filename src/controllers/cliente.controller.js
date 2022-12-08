@@ -47,16 +47,17 @@ export const nuevoCliente = async (req, res) => {
 
 export const iniciarSesion  = async (req ,res) => {
     const existeUsuario = await Clientes.findOne({correo : req.body.correo});
+    console.log(existeUsuario)
     let existeContr = null
     if(existeUsuario == null){
         existeContr = null
     }else{
-        existeContr = await Clientes.findOne({contrasenia : existeUsuario.contrasenia});
+        existeContr = await Clientes.findOne({contrasenia : req.body.contrasenia});
     }
 
     console.log(existeContr);
 
-    if(existeContr == null){
+    if(existeContr == null || existeContr == []){
         res.json({mensaje:'Correo o contrasenia incorrectos', registrado : false});
     }else
     {
@@ -81,7 +82,7 @@ export const obtenerEmpresasCategoria = async (req, res) => { //devolvera empres
 };
 
 export const obtenerUnaEmpresa = async (req, res) => { //devolvera el nombre e informacion de una empresa
-    const empresas = await Empresas.findById( req.params.idEmpresa, {nombre: true , informacion: true});
+    const empresas = await Empresas.findById( req.params.idEmpresa, {nombre: true , informacion: true, urlImagen:1});
         res.json(empresas);
 };
 

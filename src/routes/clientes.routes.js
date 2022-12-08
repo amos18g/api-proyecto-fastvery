@@ -6,7 +6,7 @@ const router = Router();
 router.post('/registrarse', clienteController.nuevoCliente);
 
 
-router.get('/iniciarSesion' ,clienteController.iniciarSesion )
+router.post('/iniciarSesion' ,clienteController.iniciarSesion )
 
 router.get('/obtenerCategorias' ,clienteController.obtenerCategorias )
 

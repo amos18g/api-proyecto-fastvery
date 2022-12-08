@@ -4,7 +4,7 @@ import Empresas from  "../models/Empresas";
 import SubCategorias from  "../models/Subcategorias"; 
 import Producto from "../models/productos";
 import Motorista from  "../models/Motoristas";
-// import Task from "../models/Task";
+
 
 //iniciar sesion
 export const login = async (req, res) => {
@@ -43,7 +43,8 @@ export const crearEmpresa = async (req, res) => {
     zona : req.body.zona,
     idCategoria : req.params.idCategoria,
     nombreCategoria : req.body.nombreCategoria,
-    informacion : req.body.informacion
+    informacion : req.body.informacion, 
+    direccion:req.body.direccion
   });
 
   const empresaGuardada = await crearEmpresa.save();
@@ -85,7 +86,6 @@ export const nuevaSubCategoria = async (req, res) => {
   const crearSub = new SubCategorias({
     nombre : req.body.nombre,
     idEmpresa : req.params.idEmpresa,
-    productos : []
   });
 
   const subGuardada = await crearSub.save();
@@ -104,7 +104,8 @@ export const crearProducto = async (req, res) => {
     nombre : req.body.nombre,
     idSubcategoria : req.params.idSubcategoria,  
     descripcion : req.body.descripcion,
-    precio : req.body.precio
+    precio : req.body.precio,
+    unidades:1
   });
 
   const productoGuardado = await crearProducto.save();

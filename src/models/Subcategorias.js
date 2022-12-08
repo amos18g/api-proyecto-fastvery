@@ -11,10 +11,6 @@ const SubCategorias = new Schema({
         type: String,
         required: true, //obligatoriamente requerido 
         trim: true //limpiar espacios
-    },
-    productos: {
-        type: Array,
-        required: true
     }
 
     
