@@ -19,6 +19,10 @@ const Ordenes = new Schema({
     envio: {
         type: Number,
         // required: true
+    },   
+    impuestos: {
+        type: Number,
+        // required: true
     },
     total: {
         type: Number        ,

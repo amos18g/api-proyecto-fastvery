@@ -10,13 +10,15 @@ router.post('/iniciarSesion' ,clienteController.iniciarSesion )
 
 router.get('/obtenerCategorias' ,clienteController.obtenerCategorias )
 
-router.post('/crearOrden' ,clienteController.nuevaOrden )
+router.post('/crearOrden' ,clienteController.nuevaOrden)
 
 router.get('/obtenerEmpresas/:idCategoria' ,clienteController.obtenerEmpresasCategoria )
 
 router.get('/obtenerUnaEmpresa/:idEmpresa' ,clienteController.obtenerUnaEmpresa ) //obtener nombree informacion de una unica empresa
 
 router.get('/obtenerProductosSub/:idEmpresa' ,clienteController.obtenerProductosSubCat )
+
+router.get('/ordenEntregada/:idOrden' ,clienteController.ordenEntregada )
 
 
 
