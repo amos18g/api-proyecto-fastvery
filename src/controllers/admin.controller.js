@@ -67,7 +67,7 @@ export const eliminarEmpresa = async (req, res) => {
 
 
 export const obtenerEmpresas = async (req, res) => {
-  const empresas = await Empresas.find();
+  const empresas = await Empresas.find({nombreCategoria : req.body.nombreCategoria, zona: req.body.zona});
   res.json(empresas);
 };
 

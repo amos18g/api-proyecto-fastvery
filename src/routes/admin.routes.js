@@ -20,7 +20,7 @@ router.delete('/eliminarEmpresa/:idEmpresa', adminController.eliminarEmpresa);
 
 router.get('/obtenerCategorias', adminController.obtenerCategorias) //obtener categorias
 
-router.get('/obtenerEmpresas', adminController.obtenerEmpresas) //obtener categorias
+router.post('/obtenerEmpresas', adminController.obtenerEmpresas) //obtener categorias
 
 router.get('/obtenerEmpresas/:idCategoria', adminController.obtenerEmpresasCategoria) //obtener empresas de una categoria
 

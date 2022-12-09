@@ -1,3 +1,4 @@
+import e from "express";
 import Empresas from "../models/Empresas";
 import Motorista from  "../models/Motoristas"; 
 import ordenes from "../models/ordenes";
@@ -73,10 +74,10 @@ export const listarOrdenes  = async (req ,res) => {
         ordenesDisponibles.forEach(async (orden, i) => {
             const empresa = await Empresas.findById(orden.idEmpresa)
     
-            detallesEmpresas.push({idOrden: orden._id,   direccionEmpresa: empresa.direccion, destino:orden.direccionCliente})
+            detallesEmpresas.push({idOrden: orden._id, direccionEmpresa: empresa.direccion,  destino:orden.direccionCliente})
     
             
-            console.log(orden._id, empresa.direccion)
+            console.log(orden._id)
             if(i == ordenesDisponibles.length - 1){
                 res.json(detallesEmpresas)
             }
