@@ -44,7 +44,7 @@ router.delete('/solicitud/rechazar/:idMotorista', adminController.rechazarMotori
 
 router.get('/solicitud/:idMotorista', adminController.obtenerMotorista); //devolvera un motorista por id
 
-router.get('/ordenesDisponibles/:zona' ,motController.listarOrdenes ) //enviar req.body.estado:0 y zn en params
+router.post('/ordenesDisponibles/:zona' ,motController.listarOrdenes ) //enviar req.body.estado:0 y zn en params
 
 router.get('/listarMotoristas' ,adminController.listarMotoristas )
 

@@ -73,8 +73,8 @@ export const listarOrdenes  = async (req ,res) => {
 
         ordenesDisponibles.forEach(async (orden, i) => {
             const empresa = await Empresas.findById(orden.idEmpresa)
-    
-            detallesEmpresas.push({idOrden: orden._id, direccionEmpresa: empresa.direccion,  destino:orden.direccionCliente})
+            console.log('empresa  ',empresa)
+            detallesEmpresas.push({idOrden: orden._id,nombreEmpresa:empresa.nombre, direccionEmpresa: empresa.direccion,  destino:orden.direccionCliente})
     
             
             console.log(orden._id)
@@ -103,5 +103,5 @@ export const cambiarEstadoOrden = async (req ,res) =>{
         idMotorista:req.body.idMotorista
     });
 
-    res.json({mensaje:'actualizado correctamente', actualizado:true});
+    res.json({mensaje:'La orden se asigno correctamente', actualizado:true});
 }
