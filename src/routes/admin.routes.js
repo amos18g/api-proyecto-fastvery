@@ -14,6 +14,10 @@ router.post('/nuevaCategoria', adminController.nuevaCategoria) //crear categoria
 router.get('/obtenerCategorias', adminController.obtenerCategorias) //obtener categorias
 
 //empresas
+router.get('/obtenerEmpresaUnica/:id', adminController.obtenerUnaEmpresa) //obtener unica empresa
+
+router.get('/obtenerProductoUnico/:id', adminController.obtenerProducto) //obtener un unico producto
+
 router.post('/crearEmpresa/:idCategoria', adminController.crearEmpresa);
 
 router.delete('/eliminarEmpresa/:idEmpresa', adminController.eliminarEmpresa);

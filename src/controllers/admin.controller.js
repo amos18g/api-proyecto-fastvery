@@ -71,6 +71,11 @@ export const obtenerEmpresas = async (req, res) => {
   res.json(empresas);
 };
 
+export const obtenerUnaEmpresa = async (req, res) => {
+  const empresas = await Empresas.find({_id:req.params.id});
+  res.json(empresas);
+};
+
 
 export const obtenerEmpresasCategoria = async (req, res) => { //devolvera empresas de una determinada categoria
   const empresas = await Empresas.find({ idCategoria : req.params.idCategoria});
@@ -110,6 +115,12 @@ export const crearProducto = async (req, res) => {
 
   const productoGuardado = await crearProducto.save();
   res.json(productoGuardado);
+};
+
+
+export const obtenerProducto = async (req, res) => {
+  const producto = await Producto.find({_id:req.params.id});
+  res.json(producto[0]);
 };
 
 
