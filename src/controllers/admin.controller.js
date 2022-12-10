@@ -41,7 +41,7 @@ export const crearEmpresa = async (req, res) => {
     urlImagen : req.body.urlImagen,
     nombre : req.body.nombre,
     zona : req.body.zona,
-    idCategoria : req.params.idCategoria,
+    idCategoria : req.params.idCategoria, 
     nombreCategoria : req.body.nombreCategoria,
     informacion : req.body.informacion, 
     direccion:req.body.direccion
