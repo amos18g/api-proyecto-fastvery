@@ -93,7 +93,7 @@ export const nuevaSubCategoria = async (req, res) => {
 };
 
 export const obtenerSubCategorias = async (req, res) => { //devolvera las subcategorias
-  const sub = await SubCategorias.find();
+  const sub = await SubCategorias.find({idEmpresa:req.params.id});
   res.json(sub);  
 };
 

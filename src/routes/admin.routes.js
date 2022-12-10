@@ -27,7 +27,7 @@ router.get('/obtenerEmpresas/:idCategoria', adminController.obtenerEmpresasCateg
 //sub categorias
 router.post('/nuevaSubCategoria/:idEmpresa', adminController.nuevaSubCategoria) 
 
-router.get('/obtenerSubCategorias', adminController.obtenerSubCategorias)
+router.get('/obtenerSubCategorias/:id', adminController.obtenerSubCategorias)
 
 //productos
 router.post('/crearProducto/:idSubcategoria', adminController.crearProducto)
